@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Analytics Projects</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --accent: #e74c3c;
+      --background: #f9f9f9;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui;
+      background: var(--background);
+      color: #333;
+      line-height: 1.8;
+    }
+    .header {
+      background: linear-gradient(135deg, var(--primary), #1A365F);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .nav-tabs {
+      display: flex;
+      justify-content: center;
+      background: var(--primary);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .tab-btn {
+      padding: 1.2rem 2rem;
+      border: none;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .tab-btn.active {
+      background: var(--accent);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+    }
+    .project-section {
+      background: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin: 2rem 0;
+      box-shadow: 0 3px 20px rgba(0,0,0,0.05);
+      animation: fadeIn 0.6s ease;
+    }
+    h1, h2, h3 {
+      color: var(--primary);
+      margin: 1.5rem 0;
+    }
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .chart-card {
+      padding: 1.5rem;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .chart-card:hover {
+      transform: translateY(-5px);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: white;
+    }
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
+    th {
+      background: var(--primary);
+      color: white;
+    }
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    blockquote {
+      background: #f8f9fa;
+      border-left: 4px solid var(--secondary);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: #555;
+    }
+    .references {
+      background: #f9f9f9;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+    ul { padding-left: 2rem; }
+    li { margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1 style="color: white;">HR Analytics Suite</h1>
+    <p style="color: white;">Compensation Analysis & Employee Engagement Solutions</p>
+  </header>
+
+  <nav class="nav-tabs">
+    <button class="tab-btn active" onclick="showProject('compensation')">Compensation Analysis</button>
+    <button class="tab-btn" onclick="showProject('engagement')">Engagement Survey</button>
+  </nav>
+
+  <!-- PROJECT 1: COMPENSATION ANALYSIS -->
+  <div id="compensation" class="container">
+    <div class="project-section">
+      <h2>Introduction</h2>
+      <p>In today's dynamic business environment, understanding compensation and benefits across industries is crucial for attracting and retaining top talent. This report delves into salary structures, bonuses, health benefits, and other employment perks, emphasizing industry differences, job roles, and geographical impacts. By analyzing these facets, organizations can optimize their compensation strategies to align with market trends and employee expectations. The report also highlights the growing importance of non-monetary benefits, such as flexible work arrangements and professional development opportunities, in shaping employee satisfaction and retention. With the rise of remote work and the increasing demand for skilled professionals, companies must adopt innovative compensation strategies to remain competitive in the talent market.</p>
+
+      <h2>Case Study: Google India</h2>
+      <blockquote>
+        "Google India offers one of the most competitive compensation packages in the technology sector, with an average salary of ₹25L for senior engineers, 20% bonuses, and comprehensive health benefits."
+      </blockquote>
+      <p>Google’s compensation strategy focuses on high base salaries to attract top talent, generous stock options for retention, and flexible work arrangements post-pandemic. The company also emphasizes employee well-being through wellness programs and mental health support. Google’s approach to compensation is data-driven, with regular benchmarking against industry standards to ensure competitiveness. The case study highlights the importance of aligning compensation strategies with organizational goals and employee expectations. By offering a holistic package that includes both monetary and non-monetary benefits, Google has successfully maintained high employee satisfaction and retention rates.</p>
+
+      <h2>Impact of Remote Work</h2>
+      <p>The rise of remote work has significantly influenced compensation structures. Companies are now offering location-based salaries, where employees in high-cost areas receive higher pay than those in low-cost regions. This approach helps balance fairness and cost-effectiveness. Remote work has also led to the normalization of salaries across regions, reducing traditional geographical pay disparities. For example, a software engineer in Bangalore may now earn a salary comparable to their counterpart in San Francisco, thanks to remote work policies. This shift has also increased the demand for flexible work arrangements, which are now a key component of compensation packages.</p>
+
+      <h2>Diversity and Inclusion</h2>
+      <p>Diversity and inclusion play a critical role in ensuring fair compensation practices. Companies are increasingly adopting pay equity audits to identify and address disparities in compensation based on gender, race, and other factors. For instance, Salesforce conducted a pay equity audit and spent $3 million to address discrepancies. Inclusive compensation practices not only promote fairness but also enhance employee engagement and retention. By fostering a culture of inclusivity, organizations can attract diverse talent and create a more innovative and productive workforce.</p>
+
+      <h2>Employee Retention Strategies</h2>
+      <p>Compensation is a key driver of employee retention. Competitive salaries, bonuses, and benefits are essential for retaining top talent. However, non-monetary benefits, such as career development opportunities and work-life balance, are equally important. For example, companies like Netflix offer unlimited vacation days to promote work-life balance, which has significantly improved employee retention. Regular feedback and transparent communication about compensation policies also play a crucial role in retaining employees. By addressing employee concerns and offering tailored benefits, organizations can reduce attrition and build a loyal workforce.</p>
+
+      <h2>Technology in HR</h2>
+      <p>HR technology is transforming compensation management. AI-driven tools are now used to analyze market trends, benchmark salaries, and identify pay disparities. For example, platforms like Payscale and Glassdoor provide real-time data on compensation trends, enabling companies to make informed decisions. HR technology also facilitates transparent communication of compensation policies, ensuring employees understand how their pay is determined. By leveraging technology, organizations can streamline compensation processes and enhance employee satisfaction.</p>
+
+      <h2>Global Trends</h2>
+      <p>Compensation trends vary significantly across global markets. In developed economies, such as the US and Europe, companies offer higher salaries and comprehensive benefits to attract top talent. In emerging markets, such as India and Brazil, organizations focus on cost-effective strategies, such as performance-based bonuses and flexible work arrangements. Multinational companies must adapt their compensation strategies to local market conditions to remain competitive. For example, Unilever offers region-specific benefits, such as housing allowances in high-cost areas, to attract and retain employees.</p>
+
+      <div class="chart-grid">
+        <div class="chart-card">
+          <canvas id="industryChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <canvas id="roleChart"></canvas>
+        </div>
+      </div>
+
+      <h2>Recommendations</h2>
+      <ul>
+        <li>Align compensation with market trends to remain competitive</li>
+        <li>Enhance non-monetary benefits, such as flexible work arrangements and professional development opportunities</li>
+        <li>Promote transparency in compensation policies to build trust and ensure fairness</li>
+      </ul>
+      <p>Organizations should regularly update their compensation structures to reflect current market conditions and industry standards. Offering flexible work arrangements, professional development opportunities, and wellness programs can boost employee satisfaction and retention. Transparent communication of compensation policies is essential to build trust and ensure fairness among employees.</p>
+
+      <h2>Conclusion</h2>
+      <p>Understanding the nuances of compensation and benefits across industries, roles, and regions is vital for organizations aiming to attract and retain talent. By aligning compensation strategies with market trends and employee expectations, companies can foster a motivated and committed workforce. The findings of this report underscore the importance of adopting a holistic approach to compensation, incorporating both monetary and non-monetary benefits. Regular benchmarking and transparent communication are key to ensuring competitiveness and fairness in compensation practices.</p>
+
+      <div class="references">
+        <h3>References</h3>
+        <ul>
+          <li>Michael Page India Salary Guide 2025</li>
+          <li>PayScale Industry Salaries in India</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 2: EMPLOYEE ENGAGEMENT -->
+  <div id="engagement" class="container" style="display:none">
+    <div class="project-section">
+      <h2>Introduction</h2>
+      <p>Employee engagement is a critical factor in organizational success, influencing productivity, retention, and overall workplace morale. This project focuses on enhancing employee engagement through comprehensive surveys and actionable strategies. The goal is to identify key areas of improvement in employee satisfaction and engagement, and to propose effective strategies to address these areas. The report highlights the importance of regular feedback, transparent communication, and employee-centric policies in fostering a positive work environment. By understanding and addressing the factors that drive engagement, organizations can create a motivated and committed workforce.</p>
+
+      <h2>Case Study: Infosys</h2>
+      <blockquote>
+        "Infosys implemented a robust engagement program in 2022, resulting in a 20% increase in employee satisfaction and a 15% reduction in attrition."
+      </blockquote>
+      <p>Infosys’ engagement strategy included flexible work hours, leadership training programs, and enhanced wellness benefits. The company also introduced regular feedback mechanisms, such as pulse surveys and focus groups, to gather employee insights. By addressing key pain points and implementing targeted initiatives, Infosys successfully improved employee satisfaction and retention. The case study highlights the importance of a data-driven approach to engagement, with regular monitoring and evaluation of initiatives to ensure their effectiveness.</p>
+
+      <h2>Impact of Remote Work</h2>
+      <p>Remote work has transformed employee engagement strategies. Companies are now leveraging virtual tools to foster collaboration and maintain team cohesion. For example, Microsoft uses platforms like Teams to facilitate virtual team-building activities and maintain employee engagement. Remote work has also increased the importance of work-life balance, with employees prioritizing flexibility and mental health support. By offering remote work options and virtual engagement initiatives, organizations can enhance employee satisfaction and productivity.</p>
+
+      <h2>Diversity and Inclusion</h2>
+      <p>Diversity and inclusion are essential for fostering employee engagement. Inclusive workplaces promote a sense of belonging and encourage employees to contribute their unique perspectives. For example, Accenture has implemented diversity training programs and inclusive policies to enhance employee engagement. By fostering a culture of inclusivity, organizations can create a more innovative and productive workforce. Inclusive engagement strategies also help attract diverse talent and improve retention rates.</p>
+
+      <h2>Employee Retention Strategies</h2>
+      <p>Employee engagement is a key driver of retention. Engaged employees are more likely to stay with their organization, reducing attrition rates. Companies can enhance engagement by offering career development opportunities, recognizing employee achievements, and promoting work-life balance. For example, Google’s "20% time" policy allows employees to work on passion projects, which has significantly improved engagement and retention. Regular feedback and transparent communication are also essential for retaining employees and building a loyal workforce.</p>
+
+      <h2>Technology in HR</h2>
+      <p>HR technology is revolutionizing employee engagement. AI-driven tools are now used to analyze engagement data, identify trends, and recommend actionable strategies. For example, platforms like Qualtrics and Leapsome provide real-time insights into employee engagement, enabling organizations to make data-driven decisions. HR technology also facilitates continuous feedback and recognition, ensuring employees feel valued and supported. By leveraging technology, organizations can enhance engagement and create a positive workplace culture.</p>
+
+      <h2>Global Trends</h2>
+      <p>Employee engagement trends vary across global markets. In developed economies, such as the US and Europe, companies focus on career development and work-life balance to enhance engagement. In emerging markets, such as India and Brazil, organizations prioritize job security and financial stability. Multinational companies must adapt their engagement strategies to local market conditions to remain competitive. For example, Unilever offers region-specific benefits, such as housing allowances in high-cost areas, to attract and retain employees.</p>
+
+      <div class="chart-grid">
+        <div class="chart-card">
+          <canvas id="engagementChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <canvas id="actionTimeline"></canvas>
+        </div>
+      </div>
+
+      <h2>Action Plan</h2>
+      <table>
+        <tr><th>Initiative</th><th>Timeline</th><th>Owner</th></tr>
+        <tr><td>Leadership Training</td><td>Q1 2024</td><td>HR Dept</td></tr>
+        <tr><td>Flexi-hours Policy</td><td>Q2 2024</td><td>Operations</td></tr>
+      </table>
+      <p>The action plan includes initiatives such as leadership training, flexible work hours, and enhanced communication strategies. Each initiative is assigned a timeline and owner to ensure accountability and timely implementation. Regular check-ins and evaluations are planned to monitor progress and make adjustments as needed.</p>
+
+      <h2>Conclusion</h2>
+      <p>Effective engagement strategies lead to higher satisfaction and productivity. Regular feedback and action plans are essential for sustained success. By addressing key areas of improvement and implementing targeted initiatives, organizations can create a positive work environment that fosters employee engagement and retention. The findings of this project highlight the importance of a data-driven approach to engagement, with regular monitoring and evaluation to ensure the effectiveness of initiatives.</p>
+
+      <div class="references">
+        <h3>References</h3>
+        <ul>
+          <li>Qualtrics Engagement Best Practices</li>
+          <li>ContactMonkey Survey Design Guide</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2023 HR Analytics Suite | Data Sources: Michael Page, Glassdoor, Qualtrics</p>
+    <p>Credits: Bittu Kumar</p>
+  </footer>
+
+  <script>
+    function showProject(projectId) {
+      document.querySelectorAll('.container').forEach(div => div.style.display = 'none');
+      document.getElementById(projectId).style.display = 'block';
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    // Project 1 Charts
+    new Chart(document.getElementById('industryChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Technology', 'Healthcare', 'Retail', 'Hospitality'],
+        datasets: [{
+          label: 'Average Salary (₹)',
+          data: [1200000, 850000, 500000, 450000],
+          backgroundColor: ['#2c3e50', '#3498db', '#e74c3c', '#95a5a6']
+        }]
+      }
+    });
+
+    new Chart(document.getElementById('roleChart'), {
+      type: 'line',
+      data: {
+        labels: ['Entry-Level', 'Mid-Level', 'Senior'],
+        datasets: [{
+          label: 'Salary Growth',
+          data: [450000, 1200000, 2500000],
+          borderColor: '#2c3e50',
+          tension: 0.3
+        }]
+      }
+    });
+
+    // Project 2 Charts
+    new Chart(document.getElementById('engagementChart'), {
+      type: 'radar',
+      data: {
+        labels: ['Satisfaction', 'Work-Life', 'Management', 'Growth'],
+        datasets: [{
+          label: 'Engagement Scores',
+          data: [78, 82, 65, 70],
+          backgroundColor: 'rgba(52, 152, 219, 0.2)'
+        }]
+      }
+    });
+
+    new Chart(document.getElementById('actionTimeline'), {
+      type: 'bar',
+      data: {
+        labels: ['Planning', 'Execution', 'Review'],
+        datasets: [{
+          label: 'Action Timeline (Weeks)',
+          data: [2, 4, 2],
+          backgroundColor: '#e74c3c'
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
